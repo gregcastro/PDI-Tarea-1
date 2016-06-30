@@ -28,12 +28,10 @@ public class procesamientoImagen {
     private BufferedImage imageActual;
     public int alto, ancho, relleno, tam;
     public byte[] bytes;
-    public String dirName="C:\\Users\\Twins\\Documents";
     
     
     public BufferedImage abrir() throws FileNotFoundException, IOException
     {
-//        BufferedImage imageActual;
         //Creamos un nuevo cuadro de diálogo para seleccionar imagen
         JFileChooser selector=new JFileChooser();
         //Le damos un título
@@ -67,21 +65,10 @@ public class procesamientoImagen {
             InputStream in = new ByteArrayInputStream(bytes);
             imageActual = ImageIO.read(in);
             
-            System.out.println(bytes[28] + " bits");
-            
             //Obtengo alto y ancho
             ancho = (((int)bytes[21]&0xff) << 24) | (((int)bytes[20]&0xff) << 16) | (((int)bytes[19]&0xff) << 8) | (int)bytes[18]&0xff;
-            alto = (((int)bytes[25]&0xff) << 24) | (((int)bytes[24]&0xff) << 16) | (((int)bytes[23]&0xff) << 8) | (int)bytes[22]&0xff;
-//            tam = bytes.length - 54;
-
-            System.out.println("Alto = "+ alto + " Ancho = " + ancho);
-            
-
-        }
-        
-        
-        
-        
+            alto = (((int)bytes[25]&0xff) << 24) | (((int)bytes[24]&0xff) << 16) | (((int)bytes[23]&0xff) << 8) | (int)bytes[22]&0xff;  
+        } 
         return imageActual;
     }
     
@@ -109,8 +96,7 @@ public class procesamientoImagen {
         InputStream in = new ByteArrayInputStream(bytes);
         imageActual = ImageIO.read(in);
         
-        BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytes));
-        ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
+
         
         
         return imageActual;
@@ -415,9 +401,7 @@ public class procesamientoImagen {
         InputStream in = new ByteArrayInputStream(bytes);
         imageActual = ImageIO.read(in);
         
-        
-        BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytes));
-        ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
+
         
         return imageActual;
     }
@@ -509,8 +493,6 @@ public class procesamientoImagen {
 
             try 
             {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
                 
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
@@ -605,9 +587,6 @@ public class procesamientoImagen {
 
             try 
             {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
                 
@@ -969,9 +948,6 @@ public class procesamientoImagen {
             
             
             try {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
             }
@@ -1162,9 +1138,6 @@ public class procesamientoImagen {
             
             
             try {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
             }
@@ -1277,9 +1250,6 @@ public class procesamientoImagen {
             
             try 
             {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
                 
@@ -1369,9 +1339,6 @@ public class procesamientoImagen {
             System.arraycopy(res, 0, bytes, 0, n+1078);
             
             try {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
             }
@@ -1617,9 +1584,6 @@ public class procesamientoImagen {
             
             
             try {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-                
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
             }
@@ -1974,9 +1938,6 @@ public class procesamientoImagen {
 
 
             try {
-                BufferedImage imag=ImageIO.read(new ByteArrayInputStream(res));
-                ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-
                 InputStream in = new ByteArrayInputStream(res);
                 imageActual = ImageIO.read(in);
             }
@@ -2253,10 +2214,6 @@ public class procesamientoImagen {
         InputStream in = new ByteArrayInputStream(bytes);
         imageActual = ImageIO.read(in);
         
-        BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytes));
-        ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-        
-
         return imageActual;
     }
     
@@ -2459,10 +2416,6 @@ public class procesamientoImagen {
         
         InputStream in = new ByteArrayInputStream(bytes);
         imageActual = ImageIO.read(in);
-        
-        BufferedImage imag=ImageIO.read(new ByteArrayInputStream(bytes));
-        ImageIO.write(imag, "bmp", new File(dirName,"salida.bmp"));
-        
 
         return imageActual;
     }
